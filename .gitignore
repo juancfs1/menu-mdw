@@ -1,0 +1,14 @@
+# Host-specific configuration
+lib/menu_mdw.conf
+
+# Local/editor files
+.DS_Store
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Test/runtime output
+*.log
+coverage/

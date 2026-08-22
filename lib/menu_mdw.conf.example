@@ -1,0 +1,32 @@
+# Example configuration for Middleware Management Menu.
+# Copy this file to menu_mdw.conf and adapt it to the target host.
+# Do not commit a host-specific menu_mdw.conf containing internal data.
+
+# Services managed by the operating system.
+SERVICES=("httpd" "tomcat" "wildfly" "WEBLOGIC_ADMIN" "WEBLOGIC_APP01")
+
+# Technologies enabled on this host.
+# Supported values: Apache, Tomcat, Wildfly, Weblogic
+TECHNOLOGIES=("Apache" "Tomcat" "Wildfly" "Weblogic")
+
+# Tomcat installation directories. One entry per instance.
+TOMCAT_INSTANCES=("/opt/tomcat" "/opt/tomcat-app01")
+
+# WildFly installation directories. One entry per instance.
+WILDFLY_INSTANCES=("/opt/wildfly" "/opt/wildfly-app01")
+
+# WildFly modes corresponding to the configured instances.
+# Supported values: standalone, domain
+WILDFLY_MODES=("standalone" "domain")
+
+# WebLogic service mapping.
+# Format: "systemd_service:WebLogic.Name:type"
+# type: adminserver, nodemanager, managed
+WEBLOGIC_SERVICE_MAP=(
+    "WEBLOGIC_ADMIN:AdminServer:adminserver"
+    "WEBLOGIC_NODEMANAGER:NodeManager:nodemanager"
+    "WEBLOGIC_APP01:APP01:managed"
+)
+
+# WebLogic domain directories.
+WEBLOGIC_DOMAINS=("/opt/oracle/domains/example_domain")
